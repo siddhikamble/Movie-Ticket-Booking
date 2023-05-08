@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Movie booking</title>
+</head>
+<body>
+	<form action="#" method="post" onsubmit="return validateForm()">
+		<label for="registrationID">Registration ID*</label>
+		<input type="text" id="registrationID" name="registrationID" placeholder="e.g. 23WP0001" required pattern="[0-9]{2}[A-Z]{2}[0-9]{4}" title="Please enter a valid registration ID (e.g. 23WP0001)">
+	  
+		<label for="username">Username*</label>
+		<input type="text" id="username" name="username" placeholder="Username" required pattern="[A-Za-z]+" title="Please enter a valid username without any digits">
+	  
+		<label for="password">Password*</label>
+		<input type="password" id="password" name="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}" title="Please enter a valid password with at least one lowercase letter, one uppercase letter, one digit, one special character and a minimum length of 8">
+	  
+		<label for="email">Email*</label>
+		<input type="email" id="email" name="email" placeholder="example@example.com" required title="Please enter a valid email address">
+	  
+		<label for="mobileNumber">Mobile number*</label>
+		<input type="tel" id="mobileNumber" name="mobileNumber" placeholder="e.g. 1234567890" required pattern="[1-9]{1}[0-9]{9}" title="Please enter a valid 10-digit mobile number without any leading zeroes">
+	  
+		<label for="dob">DOB*</label>
+		<input type="text" id="dob" name="dob" placeholder="DDMMYYYY" required pattern="(0?[1-9]|[12][0-9]|3[01])(0?[1-9]|1[0-2])[0-9]{4}" title="Please enter a valid date of birth (DDMMYYYY)">
+	  
+		<button type="submit">Submit</button>
+		<button type="button" onclick="clearForm()">Cancel</button>
+	  </form>
+	  
+		<section class="top-bar">
+			<div class="left-content">
+				<h2 class="title">Movie Booking</h2>
+				<ul class="navigation">
+					<li><a href="#">Home</a></li>
+					<li><a class="active" href="#">Movies</a></li>
+					<li><a href="#">Theaters</a></li>
+					<li><a href="#">News</a></li>
+				</ul>
+			</div>
+			<div class="right-content">
+				<img src="./assets/images/filter.png" alt="" class="filter">
+                <img src="./assets/images/cart.png" alt="" class="cart">
+                <img src="./assets/images/help.png" alt="" class="help">
+                <div class="profile-img-box">
+					<img src="./assets/images/profile.png" alt="">
+            </div>
+			<img src="./assets/images/menu.png" alt="" class="menu">
+			</div>
+		</section>
+		<section class="main-container">
+			<div class="sidebar">
+				<form action="#">
+					<div class="sidebar-groups">
+						<h3 class="sg-title">Categories</h3>
+						<input type="checkbox" id="adventure" name="adventure" value="adventure">
+						<label for="adventure">Adventure</label><br>
+						<input type="checkbox" id="action" name="action" value="action">
+						<label for="action">Action</label><br>
+						<input type="checkbox" id="animation" name="animation" value="animation">
+						<label for="animation">Animation</label><br>
+						<input type="checkbox" id="comedy" name="comedy" value="comedy">
+						<label for="comedy">Comedy</label><br>
+						<input type="checkbox" id="science" name="science" value="science">
+						<label for="science">Science Fiction</label><br>
+						<input type="checkbox" id="thriller" name="thriller" value="thriller">
+						<label for="thriller">Thriller</label><br>
+						<input type="checkbox" id="history" name="history" value="history">
+						<label for="history">History</label><br>
+						<input type="checkbox" id="documentary" name="documentary" value="documentary">
+						<label for="documentary">Documentary</label><br>
+						<input type="checkbox" id="fantasy" name="fantasy" value="fantasy">
+						<label for="fantasy">Fantasy</label><br>
+					</div>
+					<div class="sidebar-groups">
+						<h3 class="sg-title">Language</h3>
+                    	<input type="checkbox" id="english" name="english" value="english">
+                   	    <label for="english">English</label><br>
+                        <input type="checkbox" id="spanish" name="spanish" value="spanish">
+                        <label for="spanish">Spanish</label><br>
+                        <input type="checkbox" id="hindi" name="hindi" value="hindi">
+                        <label for="hindi">Hindi</label><br>
+					</div>
+					<div class="sidebar-groups">
+						<h3 class="sg-title">Time</h3>
+                        <input type="radio" id="morning" name="time" value="morning">
+                        <label for="morning">Morning</label><br>
+                        <input type="radio" id="night" name="time" value="night">
+                        <label for="night">Night</label><br>
+					</div>
+					<div class="sidebar-groups">
+						<a href="#" class="btn-l btn">Apply Filters</a>
+					</div>
+				</form>
+			</div>
+			<div class="movies-container">
+				<div class="upcoming-img-box">
+					<img src="assets/images/upcoming.jpg" alt="">
+					<p class="upcoming-title">Upcoming Movie</p>
+					<div class="buttons">
+						<a href="#" class="btn">Book Now</a>
+						<a href="#" class="btn-alt btn">Play Trailer</a>
+					</div>
+				</div>
+				<div class="current-movies">
+					<div class="current movie">
+						<div class="cm-img-box">
+							<img src="assets/images/movie1.jpg" alt="">
+						</div>
+						<h3 class="movie-title">Fast X</h3>
+						<p class="screen-name">Screen : Platinum</p>
+						<div class="booking">
+							<h2 class="price">Rs.150</h2>
+                            <a href="#" class="btn">Buy Tickets</a>
+						</div>
+					</div>
+					<div class="current-movie">
+						<div class="cm-img-box">
+							<img src="assets/images/movie2.jpg" alt="">
+						</div>
+						<h3 class="movie-title">Mario Bros</h3>
+						<p class="screen-name">Screen : Gold</p>
+						<div class="booking">
+							<h2 class="price">Rs.200</h2>
+							<a href="#" class="btn">Buy Tickets</a>
+						</div>
+					</div>
+					<div class="current-movie">
+						<div class="cm-img-box">
+							<img src="assets/images/movie3.jpg" alt="">
+						</div>
+						<h3 class="movie-title">Evil Dead Rise</h3>
+						<p class="screen-name">Screen : Silver</p>
+						<div class="booking">
+							<h2 class="price">Rs.250</h2>
+							<a href="#" class="btn">Buy Tickets</a>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</section>
+
+</body>
+
+</html>
